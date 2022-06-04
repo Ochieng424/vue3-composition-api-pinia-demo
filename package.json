@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "pinia": "^2.0.14",
+    "primeicons": "^5.0.0",
+    "primevue": "^3.12.6",
     "vue": "^3.2.25"
   },
   "devDependencies": {

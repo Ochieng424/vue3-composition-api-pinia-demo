@@ -1,10 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-/* pinia */
-import { createPinia } from "pinia";
+/* Pinia */
+import { createPinia } from "pinia"
 
-let app = createApp(App);
+/* PrimeVue */
+import PrimeVue from 'primevue/config'
 
-app.use(createPinia());
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(PrimeVue)
 app.mount('#app')
