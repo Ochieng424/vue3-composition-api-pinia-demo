@@ -1,4 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+/* pinia */
+import { createPinia } from "pinia";
+
+let app = createApp(App);
+
+app.use(createPinia());
+app.mount('#app')
