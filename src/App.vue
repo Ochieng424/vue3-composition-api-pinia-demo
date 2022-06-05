@@ -1,21 +1,45 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import {ref} from 'vue'
+import ProductCard from "./components/Product/ProductCard.vue";
+import { productsStore } from "./store/products";
+
+const items = ref([
+  {
+    label: 'Home',
+    icon: 'pi pi-fw pi-home',
+  },
+  {
+    label: 'Cart',
+    icon: 'pi pi-fw pi-shopping-cart',
+  }
+]);
+
+const productStore = productsStore();
+
+const products = productStore.getProducts;
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>
+    <Menubar :model="items">
+      <template #start>
+        <img alt="logo" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" height="40"
+             class="mr-2">
+      </template>
+      <template #end>
+        <InputText placeholder="Search" type="text"/>
+      </template>
+    </Menubar>
+    <div class="p-5">
+      <div class="grid">
+        <div class="col-12 md:col-3" v-for="product in products" :key="product.id">
+          <ProductCard :product="product" />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
