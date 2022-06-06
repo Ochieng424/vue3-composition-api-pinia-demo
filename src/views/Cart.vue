@@ -22,7 +22,7 @@
       </Column>
       <Column header="Remove from cart">
         <template #body="slotProps">
-          <Button @click="productStore.removeFromCart(slotProps.data.name)" icon="pi pi-times" class="p-button-danger"/>
+          <Button @click="productStore.removeFromCart(slotProps.data)" icon="pi pi-times" class="p-button-danger"/>
         </template>
       </Column>
       <template #footer>

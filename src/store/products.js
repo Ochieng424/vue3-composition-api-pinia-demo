@@ -60,6 +60,7 @@ export const productsStore = defineStore('products', {
             this.cart.push(product);
         },
         removeFromCart(product){
+            console.log(this.cart.indexOf(product));
             this.cart.splice(this.cart.indexOf(product), 1);
         },
         clearCart(){
