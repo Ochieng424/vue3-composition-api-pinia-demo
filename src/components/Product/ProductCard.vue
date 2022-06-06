@@ -19,7 +19,7 @@
     </template>
     <template #footer>
       <Button v-if="!productStore.productInCart(product.id)" @click="productStore.addToCart(product)" icon="pi pi-check" label="Add to cart"/>
-      <Button v-else @click="productStore.removeFromCart(product)" icon="pi pi-times" label="Remove from Cart" class="p-button-secondary"/>
+      <Button v-else @click="productStore.removeFromCart(product)" icon="pi pi-times" label="Remove from Cart" class="p-button-danger"/>
     </template>
   </Card>
 </template>

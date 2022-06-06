@@ -42,17 +42,17 @@ export const productsStore = defineStore('products', {
         cart: [],
     }),
     getters: {
-        getProducts: (state) => {
-            return state.products;
+        getProducts(){
+            return this.products;
         },
-        getCart: (state) => {
-            return state.cart;
+        getCart(){
+            return this.cart;
         },
-        getProductById: (state) => {
-            return (productId) => state.products.find(product => product.id === productId);
+        getProductById(){
+            return (productId) => this.products.find(product => product.id === productId);
         },
-        productInCart: (state) => {
-            return (productId) => state.cart.find(product => product.id === productId);
+        productInCart(){
+            return (productId) => this.cart.find(product => product.id === productId);
         }
     },
     actions: {
