@@ -56,13 +56,13 @@ export const productsStore = defineStore('products', {
         }
     },
     actions: {
-        addToCart: (product) => {
+        addToCart(product){
             this.cart.push(product);
         },
-        removeFromCart: (product) => {
+        removeFromCart(product){
             this.cart.splice(this.cart.indexOf(product), 1);
         },
-        clearCart: () => {
+        clearCart(){
             this.cart = [];
         }
     }

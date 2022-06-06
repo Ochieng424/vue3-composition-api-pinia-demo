@@ -18,8 +18,8 @@
 
     </template>
     <template #footer>
-      <Button v-if="!productStore.productInCart" icon="pi pi-check" label="Add to cart"/>
-      <Button v-else icon="pi pi-times" label="Remove from Cart" class="p-button-secondary" style="margin-left: .5em"/>
+      <Button v-if="!productStore.productInCart(product.id)" @click="productStore.addToCart(product)" icon="pi pi-check" label="Add to cart"/>
+      <Button v-else @click="productStore.removeFromCart(product)" icon="pi pi-times" label="Remove from Cart" class="p-button-secondary"/>
     </template>
   </Card>
 </template>
@@ -37,9 +37,15 @@ export default {
   },
   setup(props) {
     const productStore = productsStore();
+
+    function addToCart(cartProduct) {
+      productStore.addToCart(cartProduct);
+    }
+
     return {
       product: props.product,
-      productStore
+      productStore,
+      addToCart
     }
   }
 }
