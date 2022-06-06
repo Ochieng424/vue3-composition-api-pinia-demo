@@ -2,7 +2,7 @@
 
 A simple ecommerce products cart app to try out pinia state management with composition api
 
-[Check demo](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup)
+[Check demo](https://vue3-composition-api-pinia-demo.netlify.app)
 
 ## Project set up
 
